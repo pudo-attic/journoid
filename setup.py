@@ -20,6 +20,9 @@ setup(
     zip_safe=False,
     install_requires=[],
     tests_require=[],
-    entry_points=\
-    """ """,
+    entry_points={
+        'console_scripts': [
+            'journoid = journoid.core:main',
+        ]
+    }
 )
