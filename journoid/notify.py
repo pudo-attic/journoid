@@ -7,7 +7,7 @@ from email import Encoders
 def notify(config, recipient, subject, message):
     msg = MIMEMultipart()
     mail_config = config.get('mail')
-    msg['From'] = mail_config.get('sender')
+    msg['From'] = "Journoid Notifier <" + mail_config.get('sender') + ">"
     msg['To'] = recipient
     msg['Subject'] = subject
 
@@ -20,7 +20,7 @@ def notify(config, recipient, subject, message):
     if mail_config.get('login'):
         mailServer.login(mail_config.get('login'),
                          mail_config.get('password'))
-    mailServer.sendmail(mail_config.get('sender',
+    mailServer.sendmail(mail_config.get('sender'),
                         recipient,
                         msg.as_string())
     mailServer.close()

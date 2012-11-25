@@ -1,1 +1,3 @@
 argparse==1.2.1
+messytables==0.3.0
+Unidecode==0.04.9
